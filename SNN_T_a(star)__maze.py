@@ -250,7 +250,7 @@ class SpikingMLP(nn.Module):
 class SpikingSelfAttention(nn.Module):
     def __init__(self, dim, num_heads=8, qkv_bias=False, T=4):
         super().__init__()
-        assert dim % num_heads == 0,
+        assert dim % num_heads == 0
 
         self.num_heads = num_heads
         self.head_dim = dim // num_heads
