@@ -385,7 +385,6 @@ class SpikingTransformerMaze(nn.Module):
         return action_preds
 
 
-# ------------------- Plot Helpers ------------------- #
 def plot_loss_with_variance(epochs, train_loss_means, train_loss_stds, val_loss_means, val_loss_stds):
     plt.figure(figsize=(8, 6))
 
@@ -614,7 +613,7 @@ def train(model, dataloader, optimizer, scheduler, epochs, writer, val_loader):
     plot_accuracy(train_accuracies, val_accuracies)
 
 
-# ------------------- Example Main Training Script ------------------- #
+
 if __name__ == "__main__":
     writer = SummaryWriter(log_dir="runs/d4rl_maze_experiment")
 
@@ -670,8 +669,6 @@ if __name__ == "__main__":
     print(f"Final Train Accuracy: {train_acc*100:.2f}%")
     print(f"Final Val Accuracy:   {val_acc*100:.2f}%")
 
-    # Example confusion matrix on validation set (if you want)
-    # Collect all preds/targets:
     all_preds = []
     all_targets = []
     model.eval()
